@@ -19,32 +19,9 @@ export class App extends Component {
     this.setState(prevState => ({ [name]: prevState[name] + 1 }));
   };
 
-  // handleGood = () => {
-  //   this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  //   }));
-  // };
-
-  // handleNeutral = () => {
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-
-  // handleBad = () => {
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
-
   totalFeedback = () => {
     return Object.values(this.state).reduce((acc, value) => acc + value, 0);
   };
-
-  // totalFeedback = () => {
-  //   const { good, neutral, bad } = this.state;
-  //   return good + neutral + bad;
-  // };
 
   percentagePositiveFeedback = () => {
     return parseInt((this.state.good / this.totalFeedback()) * 100);
